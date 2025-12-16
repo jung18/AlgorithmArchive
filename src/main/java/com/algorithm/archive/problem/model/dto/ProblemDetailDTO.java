@@ -1,15 +1,14 @@
 package com.algorithm.archive.problem.model.dto;
 
-import com.algorithm.archive.problem.model.entity.Algorithm;
+import com.algorithm.archive.problem.model.entity.AlgorithmType;
 import com.algorithm.archive.problem.model.entity.Problem;
 import com.algorithm.archive.problem.model.entity.ProblemLevel;
 import com.algorithm.archive.solution.model.dto.SolutionDTO;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -21,7 +20,7 @@ public class ProblemDetailDTO {
 
     private ProblemLevel level;
 
-    private List<Algorithm> algorithms;
+    private Set<AlgorithmType> algorithms;
 
     private String title;
 
@@ -33,7 +32,7 @@ public class ProblemDetailDTO {
         this.problemId = problem.getId();
         this.problemNumber = problem.getProblemNumber();
         this.level = problem.getLevel();
-        this.algorithms = new ArrayList<>(problem.getAlgorithms());
+        this.algorithms = problem.getAlgorithms();
         this.title = problem.getTitle();
         this.content = problem.getContent();
         this.solutions = problem.getSolutions().stream()

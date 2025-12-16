@@ -13,6 +13,7 @@ import java.util.*;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class Problem {
 
     @Id
@@ -24,8 +25,10 @@ public class Problem {
     @Enumerated(EnumType.STRING)
     private ProblemLevel level;
 
-    @OneToMany(mappedBy = "problem")
-    private Set<Algorithm> algorithms = new HashSet<>();
+    @ElementCollection
+    @CollectionTable(name = "algorithms", joinColumns = @JoinColumn(name = "problem_id"))
+    @Enumerated(EnumType.STRING)
+    private Set<AlgorithmType> algorithms = new HashSet<>();
 
     private String title;
 
@@ -40,5 +43,18 @@ public class Problem {
 
     @UpdateTimestamp
     private Date updatedAt;
+
+    public Problem(long problemNumber, ProblemLevel level, Set<AlgorithmType> algorithms, String title, String content) {
+        this.problemNumber = problemNumber;
+        this.level = level;
+        this.algorithms = algorithms;
+        this.title = title;
+        this.content = content;
+    }
+
+    public void addSolution(Solution solution) {
+        solution.setProblem(this);
+        this.solutions.add(solution);
+    }
 
 }
