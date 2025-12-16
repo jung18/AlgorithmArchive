@@ -1,7 +1,7 @@
 package com.algorithm.archive.problem.model.dto;
 
-import com.algorithm.archive.problem.model.entity.AlgorithmType;
-import com.algorithm.archive.problem.model.entity.ProblemLevel;
+import com.algorithm.archive.enums.AlgorithmType;
+import com.algorithm.archive.enums.ProblemLevel;
 import lombok.Getter;
 import lombok.Setter;
 

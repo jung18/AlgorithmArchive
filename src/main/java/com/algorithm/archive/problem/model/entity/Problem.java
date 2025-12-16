@@ -1,5 +1,7 @@
 package com.algorithm.archive.problem.model.entity;
 
+import com.algorithm.archive.enums.AlgorithmType;
+import com.algorithm.archive.enums.ProblemLevel;
 import com.algorithm.archive.solution.model.entity.Solution;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -55,6 +57,13 @@ public class Problem {
     public void addSolution(Solution solution) {
         solution.setProblem(this);
         this.solutions.add(solution);
+    }
+
+    public void replaceAlgorithms(Set<AlgorithmType> algorithms) {
+        if (algorithms != null) {
+            this.algorithms.clear();
+            this.algorithms.addAll(algorithms);
+        }
     }
 
 }

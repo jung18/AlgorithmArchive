@@ -1,8 +1,8 @@
 package com.algorithm.archive.problem.model.dto;
 
-import com.algorithm.archive.problem.model.entity.AlgorithmType;
+import com.algorithm.archive.enums.AlgorithmType;
 import com.algorithm.archive.problem.model.entity.Problem;
-import com.algorithm.archive.problem.model.entity.ProblemLevel;
+import com.algorithm.archive.enums.ProblemLevel;
 import com.algorithm.archive.solution.model.dto.SolutionDTO;
 import lombok.Getter;
 import lombok.Setter;

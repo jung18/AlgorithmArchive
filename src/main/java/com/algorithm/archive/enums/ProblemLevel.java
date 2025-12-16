@@ -1,4 +1,4 @@
-package com.algorithm.archive.problem.model.entity;
+package com.algorithm.archive.enums;
 
 public enum ProblemLevel {
 

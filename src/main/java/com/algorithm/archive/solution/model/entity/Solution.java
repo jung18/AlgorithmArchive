@@ -1,5 +1,6 @@
 package com.algorithm.archive.solution.model.entity;
 
+import com.algorithm.archive.enums.Language;
 import com.algorithm.archive.problem.model.entity.Problem;
 import jakarta.persistence.*;
 import lombok.Getter;

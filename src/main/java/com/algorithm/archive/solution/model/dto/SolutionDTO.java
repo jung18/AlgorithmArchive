@@ -1,8 +1,7 @@
 package com.algorithm.archive.solution.model.dto;
 
-import com.algorithm.archive.solution.model.entity.Language;
+import com.algorithm.archive.enums.Language;
 import com.algorithm.archive.solution.model.entity.Solution;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 

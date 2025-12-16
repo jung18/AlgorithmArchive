@@ -1,6 +1,6 @@
 package com.algorithm.archive.solution.model.dto;
 
-import com.algorithm.archive.solution.model.entity.Language;
+import com.algorithm.archive.enums.Language;
 import lombok.Getter;
 import lombok.Setter;
 

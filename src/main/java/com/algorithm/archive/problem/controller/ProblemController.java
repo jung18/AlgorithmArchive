@@ -3,9 +3,9 @@ package com.algorithm.archive.problem.controller;
 import com.algorithm.archive.problem.model.dto.CreateProblemDTO;
 import com.algorithm.archive.problem.model.dto.ProblemDetailDTO;
 import com.algorithm.archive.problem.model.dto.ProblemListDTO;
-import com.algorithm.archive.problem.model.entity.AlgorithmType;
 import com.algorithm.archive.problem.model.service.ProblemService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,9 +21,9 @@ public class ProblemController {
     private final ProblemService problemService;
 
     @GetMapping("/problem")
-    public ResponseEntity<?> findAllProblems() {
-        List<ProblemListDTO> result = problemService.findAllProblems();
-        return ResponseEntity.ok(Map.of("data", result));
+    public ResponseEntity<?> findAllProblems(@RequestParam int page, @RequestParam int size, @RequestParam String sort) {
+        Page<ProblemListDTO> result = problemService.findAllProblems(page, size, sort);
+        return ResponseEntity.ok(result);
     }
 
     @GetMapping("/problem/{problemId}")
@@ -54,6 +54,12 @@ public class ProblemController {
     public ResponseEntity<?> findAllAlgorithms() {
         Map<String, String> result = problemService.findAllAlgorithms();
         return ResponseEntity.ok(result);
+    }
+
+    @GetMapping("/level")
+    public ResponseEntity<?> findAllLevel() {
+        List<String> result = problemService.findAllLevel();
+        return ResponseEntity.ok(Map.of("data", result));
     }
 
 }
