@@ -8,8 +8,8 @@ import java.util.List;
 
 public interface ProblemRepository extends JpaRepository<Problem, Long> {
 
-    @Query("select p from Problem p" +
-            "join fetch p.solutions" +
+    @Query("select p from Problem p " +
+            "join fetch p.solutions " +
             "where p.id = :problemId")
     Problem findProblemById(Long problemId);
 
