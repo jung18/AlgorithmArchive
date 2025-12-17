@@ -50,16 +50,4 @@ public class ProblemController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @GetMapping("/algorithm")
-    public ResponseEntity<?> findAllAlgorithms() {
-        Map<String, String> result = problemService.findAllAlgorithms();
-        return ResponseEntity.ok(result);
-    }
-
-    @GetMapping("/level")
-    public ResponseEntity<?> findAllLevel() {
-        List<String> result = problemService.findAllLevel();
-        return ResponseEntity.ok(Map.of("data", result));
-    }
-
 }

@@ -38,21 +38,21 @@
 
 ---
 
-### 3. 알고리즘 유형 API
+### 3. 참조 데이터 API
 
-알고리즘 유형(enum) 전체 목록을 반환합니다.
+알고리즘 유형 / 문제 레벨 / 언어 목록을 반환합니다.
 
 ```http
-GET /api/algorithms
+GET /api/reference
 ```
 
 응답 예시:
 
 ```json
 {
-  "DFS": "깊이 우선 탐색",
-  "BFS": "너비 우선 탐색",
-  "DIJKSTRA": "다익스트라"
+    "algorithms": [ { "code": "BRUTE_FORCE", "displayName": "완전 탐색"}, ... ],
+    "languages": [ { "code": "PYTHON", "displayName": "Python"}, ... ],
+    "levels": [ { "code": "LEVEL_1", "displayName": "Lv.1"}, ... ]
 }
 ```
 ---

@@ -9,13 +9,13 @@ import java.util.List;
 @Setter
 public class ReferenceDTO {
 
-    private List<AlgorithmTypeDTO> algorithms;
+    private List<EnumDTO> algorithms;
 
-    private List<String> languages;
+    private List<EnumDTO> languages;
 
-    private List<String> levels;
+    private List<EnumDTO> levels;
 
-    public ReferenceDTO(List<AlgorithmTypeDTO> algorithms, List<String> languages, List<String> levels) {
+    public ReferenceDTO(List<EnumDTO> algorithms, List<EnumDTO> languages, List<EnumDTO> levels) {
         this.algorithms = algorithms;
         this.languages = languages;
         this.levels = levels;

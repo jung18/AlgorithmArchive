@@ -24,8 +24,10 @@ public class Solution {
     @Enumerated(EnumType.STRING)
     private Language language;
 
+    @Column(columnDefinition = "longtext")
     private String code;
 
+    @Column(columnDefinition = "longtext")
     private String memo;
 
     private float time;

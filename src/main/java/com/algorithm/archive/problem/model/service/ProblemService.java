@@ -59,17 +59,4 @@ public class ProblemService {
         problemRepository.deleteById(problemId);
     }
 
-    public Map<String, String> findAllAlgorithms() {
-        Map<String, String> response = new HashMap<>();
-        Arrays.stream(AlgorithmType.values())
-                .forEach(type -> response.put(type.getCode(), type.getDisplayName()));
-        return response;
-    }
-
-    public List<String> findAllLevel() {
-        return Arrays.stream(ProblemLevel.values())
-                .map(level -> level.name())
-                .toList();
-    }
-
 }

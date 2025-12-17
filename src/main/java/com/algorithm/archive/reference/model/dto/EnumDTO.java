@@ -6,15 +6,15 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AlgorithmTypeDTO {
+public class EnumDTO {
 
     private String code;
 
     private String displayName;
 
-    public AlgorithmTypeDTO(AlgorithmType type) {
-        this.code = type.getCode();
-        this.displayName = type.getDisplayName();
+    public EnumDTO(String code, String displayName) {
+        this.code = code;
+        this.displayName = displayName;
     }
 
 }
